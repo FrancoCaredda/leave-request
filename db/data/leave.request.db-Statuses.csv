@@ -1,0 +1,4 @@
+ID;status;criticality
+LR_APPROVED;Approved;3
+LR_DENIED;Denied;1
+LR_PENDING;Pending;2

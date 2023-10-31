@@ -1,0 +1,4 @@
+ID;createdAt;createdBy;modifiedAt;modifiedBy;cause;start;end;leaveType_ID;status_ID
+97a32da8-ab2d-45ae-97b9-8f23b8d088f2;2023-10-31T12:00:00.000000Z;evelyn.hugo@gmail.com;2023-10-31T12:00:00.000000Z;evelyn.hugo@gmail.com;Test Maternity;2023-10-31;2023-11-01;443e885c-d26a-4aa2-84de-ef6d8a3923f3;LR_APPROVED
+db93ac26-51ea-40ca-8eb5-1fd63818f744;2023-10-31T12:00:00.000000Z;stefan.salvatore@gmail.com;2023-10-31T12:00:00.000000Z;stefan.salvatore@gmail.com;Test Extreme;2023-10-31;2023-11-01;80f5a77f-ff20-418e-a33c-032fbf4c29c5;LR_PENDING
+ff63a33f-ee68-4f45-af96-2ee0a5dd6300;2023-10-31T12:00:00.000000Z;elena.gilbert@gmail.com;2023-10-31T12:00:00.000000Z;elena.gilbert@gmail.com;Test Sickness;2023-10-31;2023-11-01;0f002ab9-f059-48f8-af3f-659a76ce1b31;LR_DENIED

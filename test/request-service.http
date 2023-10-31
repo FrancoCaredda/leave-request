@@ -1,0 +1,36 @@
+### GET LeaveRequest
+GET http://localhost:4004/odata/v4/request/LeaveRequests HTTP/1.1
+
+### UPDATE status=LR_APPROVED LeaveRequest FAIL
+PUT http://localhost:4004/odata/v4/request/LeaveRequests(97a32da8-ab2d-45ae-97b9-8f23b8d088f2) HTTP/1.1
+Content-Type: application/json
+
+{
+    "ID": "97a32da8-ab2d-45ae-97b9-8f23b8d088f2",
+    "createdAt": "2023-10-31T12:00:00.000Z",
+    "createdBy": "evelyn.hugo@gmail.com",
+    "modifiedAt": "2023-10-31T12:00:00.000Z",
+    "modifiedBy": "evelyn.hugo@gmail.com",
+    "cause": "Something else",
+    "start": "2023-10-31",
+    "end": "2023-11-01",
+    "leaveType_ID": "443e885c-d26a-4aa2-84de-ef6d8a3923f3",
+    "status_ID": "LR_APPROVED"
+}
+
+### UPDATE start=2023-11-01 end=2023-10-31 LeaveRequest FAIL
+PUT http://localhost:4004/odata/v4/request/LeaveRequests(db93ac26-51ea-40ca-8eb5-1fd63818f744) HTTP/1.1
+Content-Type: application/json
+
+{
+    "ID": "db93ac26-51ea-40ca-8eb5-1fd63818f744",
+    "createdAt": "2023-10-31T12:00:00.000Z",
+    "createdBy": "stefan.salvatore@gmail.com",
+    "modifiedAt": "2023-10-31T12:00:00.000Z",
+    "modifiedBy": "stefan.salvatore@gmail.com",
+    "cause": "Something else",
+    "start": "2023-11-01",
+    "end": "2023-10-31",
+    "leaveType_ID": "80f5a77f-ff20-418e-a33c-032fbf4c29c5",
+    "status_ID": "LR_PENDING"
+}
