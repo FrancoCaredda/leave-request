@@ -1,5 +1,6 @@
 using { leave.request.db as db } from '../db/schema';
 
+@requires: 'authenticated-user'
 define service RequestService {
 
     @readonly
@@ -10,4 +11,12 @@ define service RequestService {
 
     define entity LeaveRequests as projection on db.LeaveRequests;
 
+    annotate LeaveRequests with @restrict : [{
+        grant: ['CREATE', 'READ', 'UPDATE', 'DELETE'],
+        to: ['Employee'],
+        where: 'createdBy = $user'
+    }, {
+        grant: ['READ', 'UPDATE'],
+        to: ['Admin']
+    }];
 }

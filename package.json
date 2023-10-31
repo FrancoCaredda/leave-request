@@ -7,17 +7,41 @@
   "private": true,
   "dependencies": {
     "@sap/cds": "^7",
-    "express": "^4"
+    "@sap/xsenv": "^4.0.0",
+    "@sap/xssec": "^3",
+    "express": "^4",
+    "passport": "^0",
+    "@sap/cds-hana": "^2"
   },
   "devDependencies": {
-    "@cap-js/sqlite": "^1"
+    "@cap-js/sqlite": "^1",
+    "@sap/cds-dk": "^7"
   },
   "scripts": {
     "start": "cds-serve"
   },
   "cds": {
     "i18n": {
-      "for_sqlite": ["en", "it", "uk"]
+      "for_sqlite": [
+        "en",
+        "it",
+        "uk"
+      ]
+    },
+    "requires": {
+      "[production]": {
+        "db": "hana",
+        "auth": "xsuaa"
+      },
+      "[hybrid]": {
+        "db": "hana",
+        "auth": "xsuaa"
+      }
+    }
+  },
+  "requires": {
+    "auth": {
+      "kind": "mocked"
     }
   }
 }
