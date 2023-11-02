@@ -32,7 +32,7 @@
   ],
   "oauth2-configuration": {
     "redirect-uris": [
-      "https://*.applicationstudio.cloud.sap/**"
+      "https://port5000-workspaces-ws-9mkzq.us10.trial.applicationstudio.cloud.sap/login/callback"
   ]
 }
 }
