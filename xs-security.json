@@ -1,5 +1,6 @@
 {
   "xsappname": "leave-request",
+  "tenant-mode": "dedicated",
   "scopes": [
     {
       "name": "$XSAPPNAME.Employee",
@@ -28,5 +29,10 @@
       ],
       "attribute-references": []
     }
+  ],
+  "oauth2-configuration": {
+    "redirect-uris": [
+      "https://*.applicationstudio.cloud.sap/**"
   ]
+}
 }

@@ -33,6 +33,22 @@ modules:
     requires:
       - name: leave-request-db
 
+  - name: leave-request
+    type: approuter.nodejs
+    path: app/
+    parameters:
+      keep-existing-routes: true
+      disk-quota: 256M
+      memory: 256M
+    requires:
+      - name: srv-api
+        group: destinations
+        properties:
+          name: srv-api # must be used in xs-app.json as well
+          url: ~{srv-url}
+          forwardAuthToken: true
+      - name: leave-request-auth
+
 resources:
   - name: leave-request-auth
     type: org.cloudfoundry.managed-service
@@ -43,6 +59,11 @@ resources:
       config:
         xsappname: leave-request-${org}-${space}
         tenant-mode: dedicated
+        oauth2-configuration:
+          # <-- add this
+          redirect-uris:
+            # example: - https://risk-management-approuter.cfapps.eu10-004.hana.ondemand.com/login/callback
+            - https://8dfcc54ctrial.authentication.us10.hana.ondemand.com/login/callback
   - name: leave-request-db
     type: com.sap.xs.hdi-container
     parameters:
